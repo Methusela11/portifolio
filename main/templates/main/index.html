@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methusela | Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{% static 'main/img/profile.png' %}" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
+</head>
+
+<body>
+  {% include 'main/navbar.html' %}
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hello">Hello<span class="dot">.</span></p>
+      <h1>I'm <span style="color: var(--accent);">Methusela</span></h1>
+      <h2>Senior ICT Officer & Software Developer</h2>
+
+      <div class="cta" style="margin: 40px 0; text-align: left;">
+        <a href="{% url 'contact' %}" class="btn primary" style="margin-right: 10px;">Get in touch?</a>
+        <a href="{% static 'main/resume.pdf' %}" class="btn outline">My Resume</a>
+      </div>
+
+      <h4>Tech Stack</h4>
+      <ul class="stack">
+        <li>C#</li>
+        <li>SQL</li>
+        <li>CSS</li>
+        <li>Java</li>
+        <li>HTML5</li>
+        <li>Django</li>
+        <li>Kotlin</li>
+        <li>GitHub</li>
+        <li>Node.js</li>
+        <li>JavaScript</li>
+        <li>React Native</li>
+      </ul>
+    </div>
+
+    <div class="hero-right">
+      <img src="{% static 'main/img/profile.png' %}" alt="Profile Photo" class="avatar" />
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services page">
+    <h3 style="text-align:center;">Services</h3>
+    <div class="service">
+      <div class="icon">🖥️</div>
+      <div>
+        <h3>Website Development</h3>
+        <p class="muted">Modern, responsive websites tailored to your brand.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="icon">📱</div>
+      <div>
+        <h3>App Development</h3>
+        <p class="muted">Cross-platform mobile apps with clean UX and performance.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="icon">☁️</div>
+      <div>
+        <h3>Website Hosting</h3>
+        <p class="muted">Fast, secure deployment and maintenance on cloud servers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects page">
+    <h3 style="text-align:center;">Projects</h3>
+    <a href="{% url 'projects' %}" class="btn outline view-projects" style="display:block; width:fit-content; margin:0 auto 1.5rem;">
+      View All Projects
+    </a>
+
+    <div class="grid">
+      {% for project in projects %}
+      <div class="card">
+        {% if project.image %}
+          <img src="{{ project.image.url }}" alt="{{ project.title }}" />
+        {% endif %}
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description|truncatechars:120 }}</p>
+      </div>
+      {% empty %}
+      <p class="muted" style="text-align:center;">No projects yet.</p>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about page">
+    <div>
+      <h3>About Me</h3>
+      <p class="muted">
+        I’m a passionate software developer and ICT professional who started from photography 
+        and grew into a full-stack engineer. I enjoy solving real-world problems through design and code.
+      </p>
+    </div>
+    <div class="about-stats">
+      <div class="stat">
+        <span>120+</span>
+        <small>Completed Projects</small>
+      </div>
+      <div class="stat">
+        <span>95%</span>
+        <small>Client Satisfaction</small>
+      </div>
+      <div class="stat">
+        <span>2+</span>
+        <small>Years Experience</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact page">
+    <h3>Contact</h3>
+    <p class="muted">Prefer email? <strong>methuselahreynarld@gmail.com</strong></p>
+    <a href="{% url 'contact' %}" class="btn primary" style="margin-top:1rem;">Send a Message</a>
+  </section>
+</body>
+</html>

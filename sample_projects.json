@@ -1,0 +1,22 @@
+[
+  {
+    "model": "main.project",
+    "pk": 1,
+    "fields": {
+      "title": "Portfolio Website",
+      "description": "Personal portfolio built with Django and tailored UI.",
+      "image": "",
+      "link": ""
+    }
+  },
+  {
+    "model": "main.project",
+    "pk": 2,
+    "fields": {
+      "title": "Blog Platform",
+      "description": "Blogging platform with comments and tags.",
+      "image": "",
+      "link": ""
+    }
+  }
+]

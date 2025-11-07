@@ -1,0 +1,30 @@
+{% load static %}
+
+<header class="nav">
+  <div class="brand">
+    <img src="{% static 'main/img/profile.png' %}" alt="logo" class="nav-logo">
+    <span>Methusela</span>
+  </div>
+
+  <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">
+    ☰
+  </button>
+
+  <nav class="menu">
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'projects' %}">Projects</a>
+    <a href="{% url 'contact' %}">Contact</a>
+  </nav>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  });
+</script>
+
+</header>
