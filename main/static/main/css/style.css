@@ -477,6 +477,24 @@ a {
 }
 
 @media (max-width: 600px) {
+    .ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid var(--ring);
+  opacity: 0.25;
+}
+
+.ring1 {
+  width: 200px;
+  height: 200px;
+}
+
+.ring2 {
+  width: 250px;
+  height: 250px;
+  border-color: var(--accent-2);
+  opacity: 0.18;
+}
   .card img {
     height: 100px;
   }
