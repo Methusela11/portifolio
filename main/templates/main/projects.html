@@ -4,35 +4,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Contact | Portfolio</title>
-    <link rel="stylesheet" href="{% static 'main/css/project.css' %}">
+    <title>Projects - Methusela</title>
+
     <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
     <link rel="icon" type="image/png" href="{% static 'main/img/profile_circle.png' %}">
 </head>
 
 <body>
 {% include 'main/navbar.html' %}
-<section class="services page">
-            <h3>All Projects</h3>
+<section class="projects page">
+    <h3>All Projects</h3>
 
-            {% for project in projects %}
-            <div class="service">
+    <div class="grid">
+        {% for project in projects %}
+        <div class="card">
 
-                {% if project.image %}
-                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="icon">
-                {% endif %}
+            {% if project.image %}
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            {% endif %}
 
-                <div>
-                    <h3>{{ project.title }}</h3>
-                    <p class="muted">{{ project.description }}</p>
-                </div>
-            </div>
+            <h3>{{ project.title }}</h3>
+            <p class="muted">{{ project.description }}</p>
 
-            {% empty %}
-            <p class="muted">No projects available at the moment.</p>
-
-            {% endfor %}
-        </section>
+        </div>
+        {% empty %}
+        <p class="muted">No projects available at the moment.</p>
+        {% endfor %}
+    </div>
+</section>
 <script>
     setTimeout(()=>{const c=document.getElementById('message-container');
         if(c){c.style.transition='opacity .5s ease'; c.style.opacity='0';
