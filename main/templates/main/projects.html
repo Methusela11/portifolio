@@ -1,2 +1,42 @@
 {% load static %}
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>All Projects | Portfolio</title><link rel="stylesheet" href="{% static 'main/css/projects.css' %}"><link rel="icon" type="image/png" href="{% static 'main/img/profile_circle.png' %}"></head><body>{% include 'main/navbar.html' %}<section class="services page"><h3>All Projects</h3>{% for project in projects %}<div class="service">{% if project.image %}<img src="{{ project.image.url }}" alt="{{ project.title }}" class="icon">{% endif %}<div><h3>{{ project.title }}</h3><p class="muted">{{ project.description }}</p></div></div>{% empty %}<p class="muted">No projects available at the moment.</p>{% endfor %}</section></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contact | Portfolio</title>
+    <link rel="stylesheet" href="{% static 'main/css/project.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'main/img/profile_circle.png' %}">
+</head>
+
+<body>
+{% include 'main/navbar.html' %}
+<section class="services page">
+            <h3>All Projects</h3>
+
+            {% for project in projects %}
+            <div class="service">
+
+                {% if project.image %}
+                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="icon">
+                {% endif %}
+
+                <div>
+                    <h3>{{ project.title }}</h3>
+                    <p class="muted">{{ project.description }}</p>
+                </div>
+            </div>
+
+            {% empty %}
+            <p class="muted">No projects available at the moment.</p>
+
+            {% endfor %}
+        </section>
+<script>
+    setTimeout(()=>{const c=document.getElementById('message-container');
+        if(c){c.style.transition='opacity .5s ease'; c.style.opacity='0';
+            setTimeout(()=>c.remove(),500);} },3000);
+</script>
+</body>
+</html>

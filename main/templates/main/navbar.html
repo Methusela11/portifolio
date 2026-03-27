@@ -2,8 +2,10 @@
 
 <header class="nav">
   <div class="brand">
-    <img src="{% static 'main/img/profile.png' %}" alt="logo" class="nav-logo">
-    <span>Methusela</span>
+    <a href="{% url 'home' %}">
+          <img src="{% static 'main/img/profile.png' %}" alt="logo" class="nav-logo">
+          <span>Methusela</span>
+    </a>
   </div>
 
   <button class="menu-toggle" onclick="document.body.classList.toggle('menu-open')">
