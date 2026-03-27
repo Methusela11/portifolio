@@ -16,7 +16,12 @@
     <h3>All Projects</h3>
 
     <div class="grid">
-        {% for project in projects %}
+    {% for project in projects %}
+
+    {% if project.link %}
+    <a href="{{ project.link }}" target="_blank" class="card-link">
+    {% endif %}
+
         <div class="card">
 
             {% if project.image %}
@@ -27,10 +32,15 @@
             <p class="muted">{{ project.description }}</p>
 
         </div>
-        {% empty %}
-        <p class="muted">No projects available at the moment.</p>
-        {% endfor %}
-    </div>
+
+    {% if project.link %}
+    </a>
+    {% endif %}
+
+    {% empty %}
+    <p class="muted">No projects available at the moment.</p>
+    {% endfor %}
+</div>
 </section>
 <script>
     setTimeout(()=>{const c=document.getElementById('message-container');
