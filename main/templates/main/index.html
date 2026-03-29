@@ -85,20 +85,6 @@
     <a href="{% url 'projects' %}" class="btn outline view-projects" style="display:block; width:fit-content; margin:0 auto 1.5rem;">
       View All Projects
     </a>
-
-    <div class="grid">
-      {% for project in projects %}
-      <div class="card">
-        {% if project.image %}
-          <img src="{{ project.image.url }}" alt="{{ project.title }}" />
-        {% endif %}
-        <h3>{{ project.title }}</h3>
-        <p>{{ project.description|truncatechars:120 }}</p>
-      </div>
-      {% empty %}
-      <p class="muted" style="text-align:center;">No projects yet.</p>
-      {% endfor %}
-    </div>
   </section>
 
   <!-- About Section -->
