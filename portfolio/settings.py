@@ -6,7 +6,10 @@ SECRET_KEY = 'django-insecure-replace-me'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1'
+    '.onrender.com',
+]
 
 INSTALLED_APPS = ['django.contrib.admin','django.contrib.auth','django.contrib.contenttypes','django.contrib.sessions','django.contrib.messages','django.contrib.staticfiles','main']
 
