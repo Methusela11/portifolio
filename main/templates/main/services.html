@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methusela's Portfolio</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{% static 'main/img/profile.png' %}" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}" />
+</head>
+
+<body>
+  {% include 'main/navbar.html' %}
+
+  <!-- Services Section -->
+  <section class="services page">
+    <h3 style="text-align:center;">Services</h3>
+    <div class="service">
+      <div class="icon">🖥️</div>
+      <div>
+        <h3>Website Development</h3>
+        <p class="muted">Modern, responsive websites tailored to your brand.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="icon">📱</div>
+      <div>
+        <h3>App Development</h3>
+        <p class="muted">Cross-platform mobile apps with clean UX and performance.</p>
+      </div>
+    </div>
+
+    <div class="service">
+      <div class="icon">☁️</div>
+      <div>
+        <h3>Website Hosting</h3>
+        <p class="muted">Fast, secure deployment and maintenance on cloud servers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact page">
+    <h3>Contact</h3>
+    <p class="muted">Prefer email? <strong>methuselahreynarld@gmail.com</strong></p>
+    <a href="{% url 'contact' %}" class="btn primary" style="margin-top:1rem;">Send a Message</a>
+  </section>
+</body>
+</html>

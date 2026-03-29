@@ -15,6 +15,9 @@ def project_list(request):
 def about(request):
     return render(request, 'main/about.html')
 
+def services(request):
+    return render(request, 'main/services.html')
+
 
 
 def contact(request):
